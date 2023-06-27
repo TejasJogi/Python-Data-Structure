@@ -40,7 +40,6 @@ def printLinkedList(head):
         curr = curr.next
 
 
-
 llist_count = int(input())
 
 llist = SinglyLinkedList()
