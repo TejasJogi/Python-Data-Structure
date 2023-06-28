@@ -30,6 +30,10 @@
 # 16
 # 13
 
+class node:
+    def __init__(self):
+        self.head = head
+        self.next = null
 
 
 def printLinkedList(head):
