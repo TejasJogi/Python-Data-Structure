@@ -30,15 +30,30 @@
 # 16
 # 13
 
-class node:
-    def __init__(self):
-        self.head = head
-        self.next = null
+class Node:
 
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class SinglyLinkedList:
+
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def insert_node(self, data):
+        node = Node(data)
+
+        if self.head == None:
+            self.head = node
+        else:
+            self.tail.next = node
+        
+        self.tail = node
 
 def printLinkedList(head):
     curr = head
-
     while curr:
         print(curr.data)
         curr = curr.next
