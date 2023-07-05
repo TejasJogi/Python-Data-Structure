@@ -41,4 +41,8 @@ class SinglyLinkList:
         self.head = None
         self.tail = None
 
-    
+def print_singly_linked_list(head):
+    curr = head
+    while curr:
+        print(curr.data)
+        curr = curr.next
