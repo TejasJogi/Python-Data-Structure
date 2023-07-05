@@ -47,8 +47,11 @@ def print_singly_linked_list(head):
         print(curr.data)
         curr = curr.next
 
-def insertNodeAtTail():
-    pass
+def insertNodeAtHead(head, data):
+    node = Node(data)
+    if head:
+        head = node.next
+    return node
 
 llist_count = int(input())
 
@@ -56,7 +59,7 @@ llist = SinglyLinkedList()
 
 for _ in range(llist_count):
     llist_item = int(input())
-    llist_head = insertNodeAtTail(llist.head, llist_item)
+    llist_head = insertNodeAtHead(llist.head, llist_item)
     llist.head = llist_head
 
 print_singly_linked_list(llist.head)
