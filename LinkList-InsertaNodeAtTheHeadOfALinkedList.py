@@ -36,7 +36,7 @@ class Node:
         self.data = data
         self.next = None
 
-class SinglyLinkList:
+class SinglyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
@@ -46,3 +46,17 @@ def print_singly_linked_list(head):
     while curr:
         print(curr.data)
         curr = curr.next
+
+def insertNodeAtTail():
+    pass
+
+llist_count = int(input())
+
+llist = SinglyLinkedList()
+
+for _ in range(llist_count):
+    llist_item = int(input())
+    llist_head = insertNodeAtTail(llist.head, llist_item)
+    llist.head = llist_head
+
+print_singly_linked_list(llist.head)
