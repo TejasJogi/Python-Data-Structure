@@ -55,12 +55,12 @@ class SinglyLinkedList:
         self.head = None
         self.tail = None
 
-    def print_singly_linked_list(head):
-        curr = head
+def print_singly_linked_list(head):
+    curr = head
 
-        while curr:
-            print(curr.data)
-            curr = curr.next
+    while curr:
+        print(curr.data)
+        curr = curr.next
 
 llist_count = int(input())
 
