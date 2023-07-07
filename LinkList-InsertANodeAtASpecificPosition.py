@@ -45,6 +45,10 @@
 
 # 16 13 1 7
 
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
 llist_count = int(input())
 
