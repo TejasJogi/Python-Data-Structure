@@ -50,6 +50,11 @@ class Node:
         self.data = data
         self.next = None
 
+class SinglyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
 llist_count = int(input())
 
 llist = SinglyLinkedList()
