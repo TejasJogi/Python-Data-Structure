@@ -55,12 +55,41 @@ class SinglyLinkedList:
         self.head = None
         self.tail = None
 
-def print_singly_linked_list(head):
+    def insert_node(self,data):
+        node = Node(data)
+
+        if self.head == None:
+            self.head = node
+        else:
+            self.tail = node
+        self.tail = node
+        print(self.tail.data)
+
+def print_singly_linked_list(head, sep):
     curr = head
 
     while curr:
         print(curr.data)
         curr = curr.next
+
+def insertNodeAtPosition(head, data, position):
+    # Write your code here
+    node = Node(data)
+    
+    if head == None:
+        head = node
+    else:
+        curr = head
+        
+        count = 1
+        while count < position:
+            curr = curr.next
+            count+=1
+        
+        node.next = head.next
+        head.next = node
+    
+    return head
 
 llist_count = int(input())
 
