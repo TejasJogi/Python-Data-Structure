@@ -61,8 +61,21 @@ def print_singly_linked_list(data):
         print(itr.data)
         itr = itr.next
 
-def deleteNode():
-    pass
+def deleteNode(llist, position):
+    # Write your code here
+    itr = llist
+    
+    if position == None:
+        itr = itr.next
+    else:
+        count = 0
+        while count == position - 1:
+            itr = itr.next
+                
+        itr.next = itr.next.next
+    
+    return itr
+
 
 llist_count = int(input())
 
