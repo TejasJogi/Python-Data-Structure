@@ -54,6 +54,16 @@ class SinglyLinkedList:
         self.head = None
         self.tail = None
 
+    def insert_node(self, data):
+        node = Node(data)
+
+        if self.head == None:
+            self.head = node
+        else:
+            self.tail.next = node
+        
+        self.tail = node
+
 def print_singly_linked_list(data):
     itr = data
 
@@ -62,19 +72,14 @@ def print_singly_linked_list(data):
         itr = itr.next
 
 def deleteNode(llist, position):
-    # Write your code here
+    if position == 0:
+        return llist.next
     itr = llist
-    
-    if position == None:
+    for i in range(position-1):
         itr = itr.next
-    else:
-        count = 0
-        while count == position - 1:
-            itr = itr.next
-                
-        itr.next = itr.next.next
+    itr.next = itr.next.next
     
-    return itr
+    return llist
 
 
 llist_count = int(input())
