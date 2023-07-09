@@ -88,6 +88,15 @@ class SinglyLinkedList:
         self.tail = node
         print(self.tail.data)
 
+def reversePrint(llist):
+    # Write your code here
+    itr = llist
+    
+    if itr == None:
+        return
+    reversePrint(itr.next)
+    print(itr.data)
+
 tests = int(input())
 
 for tests_itr in range(tests):
