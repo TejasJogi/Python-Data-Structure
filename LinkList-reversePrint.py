@@ -77,3 +77,14 @@ class SinglyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
+
+tests = int(input())
+
+for tests_itr in range(tests):
+    llist_count = int(input())
+
+    llist = SinglyLinkedList()
+
+    for _ in range(llist_count):
+        llist_item = int(input())
+        llist.insert_node(llist_item)
