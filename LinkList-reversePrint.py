@@ -107,3 +107,5 @@ for tests_itr in range(tests):
     for _ in range(llist_count):
         llist_item = int(input())
         llist.insert_node(llist_item)
+
+reversePrint(llist.head)
