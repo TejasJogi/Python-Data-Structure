@@ -69,15 +69,17 @@ def print_singly_linked_list(head):
         itr = itr.next
 
 def reverse(llist):
-    def insert_node(self, data):
-        node = Node(data)
+    prev = None
+    curr = llist
+    nxt = curr.next
 
-        if self.head == None:
-            self.head = node
-        else:
-            self.tail.next = node
-        
-        self.tail = node
+    while curr != None:
+        nxt = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nxt 
+    head = prev
+    return head
 
 tests = int(input())
 
