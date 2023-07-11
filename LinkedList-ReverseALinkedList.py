@@ -50,3 +50,10 @@ class SinglyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
+
+def print_singly_linked_list(head):
+    itr = head
+
+    while itr:
+        print(head.data)
+        itr = itr.next
