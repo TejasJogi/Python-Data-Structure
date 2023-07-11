@@ -92,4 +92,4 @@ for tests_itr in range(tests):
 
     llist1 = reverse(llist.head)
 
-    print_singly_linked_list(llist1)
+print_singly_linked_list(llist1)
