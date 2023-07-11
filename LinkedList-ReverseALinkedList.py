@@ -51,6 +51,16 @@ class SinglyLinkedList:
         self.head = None
         self.tail = None
 
+    def insert_node(self, data):
+        node = Node(data)
+
+        if self.head == None:
+            self.head = node
+        else:
+            self.tail.next = node
+        
+        self.tail = node
+
 def print_singly_linked_list(head):
     itr = head
 
