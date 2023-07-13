@@ -61,6 +61,19 @@ class SinglyLinkedList:
         self.head = None
         self.tail = None
 
+        def insert_node(self, data):
+            node = Node(data)
+
+            if self.head == None:
+                self.head = node
+            else:
+                self.tail.next = node
+            
+            self.tail = node
+
+def compare_lists(llist1, llist2):
+    pass
+
 tests = int(input())
 
 for tests_itr in range(tests):
