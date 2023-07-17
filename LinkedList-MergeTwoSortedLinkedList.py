@@ -45,6 +45,10 @@
 
 # 1 2 3 3 4 
 
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
 def mergeLists(head1, head2):
     pass
