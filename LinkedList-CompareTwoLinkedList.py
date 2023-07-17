@@ -53,26 +53,38 @@
 
 class Node:
     def __init__(self, data):
-        self.head = data
-        self.tail = None
+        self.data = data
+        self.next = None
 
 class SinglyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
 
-        def insert_node(self, data):
-            node = Node(data)
+    def insert_node(self, data):
+        node = Node(data)
 
-            if self.head == None:
-                self.head = node
-            else:
-                self.tail.next = node
-            
-            self.tail = node
+        if self.head == None:
+            self.head = node
+        else:
+            self.tail.next = node
+        
+        self.tail = node
 
 def compare_lists(llist1, llist2):
-    pass
+
+    while llist1 and llist2:
+        if llist1.data == llist2.data:
+            llist1 = llist1.next
+            llist2 = llist2.next
+        else:
+            return 0
+    
+    
+    if llist1 == None:
+        return 1 if llist2 == None else 0
+    if llist2 == None:
+        return 0
 
 tests = int(input())
 
