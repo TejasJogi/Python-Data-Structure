@@ -64,6 +64,13 @@ class SinglyLinkedList():
             self.tail.next = node
         self.tail = node
 
+def print_singly_linked_list(head):
+    itr = head
+
+    while itr:
+        print(head.data)
+        itr = itr.next
+
 def mergeLists(head1, head2):
     pass
 
