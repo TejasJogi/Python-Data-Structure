@@ -68,11 +68,41 @@ def print_singly_linked_list(head):
     itr = head
 
     while itr:
-        print(head.data)
+        print(str(itr.data))
+
         itr = itr.next
 
 def mergeLists(head1, head2):
-    pass
+    if head1 == None:
+        return head2
+    if head2 == None:
+        return head1
+
+    if head1.data <= head2.data:
+        head = head1
+        head1 = head1.next
+    else:
+        head = head2
+        head2 = head2.next
+
+    itr = head
+    while head1 != None or head2 != None:
+        if head1 == None:
+            itr.next = head2
+            break
+        if head2 == None:
+            itr.next = head1
+            break
+        if head1.data <= head2.data:
+            itr.next = head1
+            head1 = head1.next
+        else:
+            itr.next = head2
+            head2 = head2.next
+        
+        itr = itr.next
+
+    return head
 
 if __name__ == '__main__':
 
