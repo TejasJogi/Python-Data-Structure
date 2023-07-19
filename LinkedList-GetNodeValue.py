@@ -63,6 +63,21 @@ class SinglyLinkedList:
             self.tail.next = node
         self.tail = node
 
+def getNode(llist, positionFromTail):
+    if llist == None:
+        return None
+    if not llist.next:
+        return llist.data
+    count = 0
+    itr = llist
+    while itr.next:
+        count += 1
+        itr = itr.next
+    while count > position:
+        llist = llist.next
+        count -= 1
+    return llist.data
+
 tests = int(input())
 
 for tests_itr in range(tests):
