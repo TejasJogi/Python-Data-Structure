@@ -49,6 +49,11 @@ class Node:
         self.data = data
         self.next = None
 
+class SinglyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
 tests = int(input())
 
 for tests_itr in range(tests):
