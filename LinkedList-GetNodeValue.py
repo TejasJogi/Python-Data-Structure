@@ -54,6 +54,15 @@ class SinglyLinkedList:
         self.head = None
         self.tail = None
 
+    def insert_node(self, data):
+        node = Node(data)
+
+        if self.head == None:
+            self.head = node
+        else:
+            self.tail.next = node
+        self.tail = node
+
 tests = int(input())
 
 for tests_itr in range(tests):
