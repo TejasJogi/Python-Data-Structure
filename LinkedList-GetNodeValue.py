@@ -44,6 +44,11 @@
 # 3
 
 
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
 tests = int(input())
 
 for tests_itr in range(tests):
