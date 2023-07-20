@@ -63,12 +63,23 @@ class SinglyLinkedList:
         
         self.tail = node
 
-def print_singly_linked_list(data):
-    itr = data
+def print_singly_linked_list(llist):
+    itr = llist
 
     while itr:
         print(itr.data)
         itr = itr.next
+
+def removeDuplicates(llist):
+    itr = llist
+
+    while itr:
+        if itr.data == itr.next.data:
+            itr.next = itr.next.next
+        else:
+            itr = itr.next
+    
+    return llist
 
 t = int(input())
 
@@ -83,4 +94,4 @@ for t_itr in range(t):
 
     llist1 = removeDuplicates(llist.head)
 
-    print_singly_linked_list(llist1, ' ')
+    print_singly_linked_list(llist1)
