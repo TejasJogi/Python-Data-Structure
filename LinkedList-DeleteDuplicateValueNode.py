@@ -43,6 +43,11 @@
 
 # 1 2 3 4 
 
+class Node:
+    def __init__(self, data):
+        self.head = data
+        self.tail = None
+
 t = int(input())
 
 for t_itr in range(t):
