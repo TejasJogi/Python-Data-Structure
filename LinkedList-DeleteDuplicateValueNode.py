@@ -63,6 +63,13 @@ class SinglyLinkedList:
         
         self.tail = node
 
+def print_singly_linked_list(data):
+    itr = data
+
+    while itr:
+        print(itr.data)
+        itr = itr.next
+
 t = int(input())
 
 for t_itr in range(t):
