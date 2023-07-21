@@ -53,3 +53,13 @@ class SinglyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
+
+    def insert_node(self, data):
+        node = Node(data)
+
+        if self.head == None:
+            self.head = node
+        else:
+            self.tail.next = node
+
+        self.tail = node
