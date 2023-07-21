@@ -64,6 +64,19 @@ class SinglyLinkedList:
 
         self.tail = node
 
+def has_cycle(head):
+    itr = head
+
+    Set = set()
+    while itr:
+        ptr = id(itr)
+        if ptr in Set:
+            return 1
+            
+        Set.add(ptr)
+        itr = itr.next
+    return 0     
+
 tests = int(input())
 
 for tests_itr in range(tests):
@@ -91,4 +104,4 @@ for tests_itr in range(tests):
 
     result = has_cycle(llist.head)
 
-    print(str(int(result)) + '\n')
+    print(str(result) + '\n')
