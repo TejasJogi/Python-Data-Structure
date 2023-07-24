@@ -89,7 +89,13 @@ class SinglyLinkedList:
         self.tail = node
 
 def findMergeNode(head1, head2):
-    pass
+    while head1:
+        node = head2
+        while node:
+            if head1 == node:
+                return head1.data
+            node = node.next
+        head1 = head1.next
 
 tests = int(input())
 
@@ -122,3 +128,9 @@ for tests_itr in range(tests):
     for i in range(llist2_count):
         if i != llist2_count-1:
             ptr2 = ptr2.next
+
+    ptr2.next = ptr1
+
+    result = findMergeNode(llist1.head, llist2.head)
+
+    print(str(result) + '\n')
