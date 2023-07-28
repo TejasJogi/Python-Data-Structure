@@ -59,3 +59,14 @@ class Node:
 class DoublyLinkedList:
     def __init__(self):
         self.head = None
+
+    def insert_node(self, data):
+        node = Node(data)
+
+        if self.head == None:
+            self.head = node
+        else:
+            self.tail.next = node
+            node.prev = self.tail
+
+        self.tail = node
