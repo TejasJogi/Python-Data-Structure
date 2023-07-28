@@ -70,3 +70,20 @@ class DoublyLinkedList:
             node.prev = self.tail
 
         self.tail = node
+
+t = int(input())
+
+for t_itr in range(t):
+    llist_count = int(input())
+
+    llist = DoublyLinkedList()
+
+    for _ in range(llist_count):
+        llist_item = int(input())
+        llist.insert_node(llist_item)
+
+    data = int(input())
+
+    llist1 = sortedInsert(llist.head, data)
+
+    print_doubly_linked_list(llist1)
