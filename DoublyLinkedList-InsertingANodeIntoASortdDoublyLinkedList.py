@@ -72,11 +72,23 @@ class DoublyLinkedList:
         self.tail = node
 
 def print_doubly_linked_list(data):
-    
     itr = data
-    while data is not None:
+    while itr is not None:
         print(itr.data, end =' ')
         itr = itr.next
+
+def sortedInsert(llist, data):
+    node = Node(data)
+    
+    curr = llist
+    while curr is not None:
+        if data < curr.data:
+            curr.prev = node
+            node.next = curr
+            head = node
+            return head
+        else:
+            curr = curr.next
 
 t = int(input())
 
