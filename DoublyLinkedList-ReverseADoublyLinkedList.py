@@ -58,3 +58,10 @@ class DoublyLinkedList:
             node.prev = self.tail
         
         self.tail = node
+
+def print_doubly_linked_list(head):
+
+    curr = head
+    while curr is not None:
+        print(curr.data, end = ' ')
+        curr = curr.next
