@@ -66,6 +66,20 @@ def print_doubly_linked_list(head):
         print(curr.data, end = ' ')
         curr = curr.next
 
+def reverse(head):
+    prev = None
+    curr = head
+    next = curr.next
+
+    while curr is not None:
+        next = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next
+    head = prev
+    return head
+
+
 t = int(input())
 
 for t_itr in range(t):
