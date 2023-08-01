@@ -77,19 +77,33 @@ def print_doubly_linked_list(data):
         print(itr.data, end =' ')
         itr = itr.next
 
-def sortedInsert(llist, data):
+def sortedInsert(head, data):
     node = Node(data)
     
-    curr = llist
-    while curr is not None:
-        if data < curr.data:
+    curr = head
+    if data < curr.data or data == curr.data:
             curr.prev = node
             node.next = curr
             head = node
-            return head
-        else:
-            curr = curr.next
+            return head  
 
+    while curr.next:
+        if (data > curr.data and data < curr.next.data) or data == curr.data:
+            
+            node.next = curr.next
+            curr.next.prev = node
+            node.prev = curr
+            curr.next = node
+        
+            return head
+        curr = curr.next
+
+    if data > curr.data or data == curr.data:
+        curr.next = node
+        node.prev = curr
+        return head 
+
+    
 t = int(input())
 
 for t_itr in range(t):
