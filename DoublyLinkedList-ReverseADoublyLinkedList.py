@@ -65,3 +65,18 @@ def print_doubly_linked_list(head):
     while curr is not None:
         print(curr.data, end = ' ')
         curr = curr.next
+
+t = int(input())
+
+for t_itr in range(t):
+    llist_count = int(input())
+
+    llist = DoublyLinkedList()
+
+    for _ in range(llist_count):
+        llist_item = int(input())
+        llist.insert_node(llist_item)
+
+    llist1 = reverse(llist.head)
+
+    print_doubly_linked_list(llist1)
