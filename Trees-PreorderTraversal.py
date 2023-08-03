@@ -24,3 +24,12 @@
 
 # 1 2 5 3 4 6 
 
+tree = BinarySearchTree()
+t = int(input())
+
+arr = list(map(int, input().split()))
+
+for i in range(t):
+    tree.create(arr[i])
+
+preOrder(tree.root)
