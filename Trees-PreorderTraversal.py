@@ -24,6 +24,13 @@
 
 # 1 2 5 3 4 6 
 
+class Node:
+    def __init__(self, info):
+        self.info = info
+        self.left = None
+        self.right = None
+        self.level = None
+
 tree = BinarySearchTree()
 t = int(input())
 
