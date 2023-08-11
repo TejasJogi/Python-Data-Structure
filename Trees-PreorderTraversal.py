@@ -44,6 +44,22 @@ class BinarySearchTree:
         else:
             curr = self.root
 
+            while True:
+                if val < curr.info:
+                    if curr.left:
+                        curr = curr.left
+                    else:
+                        curr.left = Node(val)
+                        break
+                elif val > curr.info:
+                    if curr.right:
+                        curr = curr.right
+                    else:
+                        curr.right = Node(val)
+                        break
+                else:
+                    break
+
 tree = BinarySearchTree()
 t = int(input())
 
