@@ -38,6 +38,12 @@ class BinarySearchTree:
     def __init__(self):
         self.root = None
 
+    def create(self, val):
+        if self.root == None:
+            self.root = Node(val)
+        else:
+            curr = self.root
+
 tree = BinarySearchTree()
 t = int(input())
 
