@@ -60,6 +60,17 @@ class BinarySearchTree:
                 else:
                     break
 
+def preOrder(root):
+    #Write your code here
+    key = root
+
+    if key is None:
+        return
+    
+    print(key.info, end = ' ')
+    preOrder(key.left)
+    preOrder(key.right)
+
 tree = BinarySearchTree()
 t = int(input())
 
