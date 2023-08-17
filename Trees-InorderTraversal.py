@@ -65,6 +65,15 @@ class BinarySearchTree:
                 else:
                     break
 
+def inOrder(root):
+    key = root
+
+    if key == None:
+        return
+    
+    inOrder(key.left)
+    print(key.info, end = ' ')
+    inOrder(key.right)
 
 tree = BinarySearchTree()
 t = int(input())
