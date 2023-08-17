@@ -59,6 +59,17 @@ class BinarySearchTree:
                 else:
                     break
 
+def postOrder(root):
+    #Write your code here
+    key = root
+
+    if key is None:
+        return
+    
+    postOrder(key.left)
+    postOrder(key.right)
+    print(key.info, end=' ')
+
 tree = BinarySearchTree()
 t = int(input())
 
