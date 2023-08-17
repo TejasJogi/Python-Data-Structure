@@ -66,7 +66,6 @@ def preOrder(root):
 
     if key is None:
         return
-    
     print(key.info, end = ' ')
     preOrder(key.left)
     preOrder(key.right)

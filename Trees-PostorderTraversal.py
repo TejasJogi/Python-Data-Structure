@@ -2,7 +2,7 @@
 
 # Input Format
 
-# Our test code passes the root node of a binary tree to the postOrder function.
+# Our test code passes the root node of a binary tree to the postOrder function. 
 
 # Output Format
 
@@ -22,3 +22,13 @@
 # Sample Output
 
 # 4 3 6 5 2 1 
+
+tree = BinarySearchTree()
+t = int(input())
+
+arr = list(map(int, input().split()))
+
+for i in range(t):
+    tree.create(arr[i])
+
+postOrder(tree.root)
