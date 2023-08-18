@@ -30,6 +30,15 @@
 
 # 3
 
+class Node:
+    def __init__(self, info):
+        self.info = info
+        self.left = None
+        self.right = None
+        self.level = None
+
+    def __str__(self):
+        return str(self.info)
 
 tree = BinarySearchTree()
 t = int(input())
