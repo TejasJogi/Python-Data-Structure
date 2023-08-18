@@ -66,6 +66,24 @@ class BinarySearchTree():
                 else:
                     break
 
+def height(root):
+    key = root
+
+    lheight = 0
+    rheight = 0
+
+    if key.left:
+        lheight = height(key.left) + 1
+    
+    if key.right:
+        rheight = height(key.right) + 1
+
+    if lheight > rheight:
+        return lheight
+    else:
+        return rheight
+
+
 tree = BinarySearchTree()
 t = int(input())
 
