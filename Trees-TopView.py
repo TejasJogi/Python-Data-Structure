@@ -68,7 +68,7 @@ class Node:
     def __str__(self):
         return str(self.info)
 
-class BinartSearchTree:
+class BinarySearchTree:
     def __init__(self):
         self.root = None
 
@@ -93,3 +93,13 @@ class BinartSearchTree:
                         break
                 else:
                     break
+
+tree = BinarySearchTree()
+t = int(input())
+
+arr = list(map(int, input().split()))
+
+for i in range(t):
+    tree.create(arr[i])
+
+topView(tree.root)
