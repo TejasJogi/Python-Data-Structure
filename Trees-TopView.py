@@ -64,3 +64,10 @@ class Node:
         self.left = None
         self.right = None
         self.level = None
+
+    def __str__(self):
+        return str(self.info)
+
+class BinartSearchTree:
+    def __init__(self):
+        self.root = None
