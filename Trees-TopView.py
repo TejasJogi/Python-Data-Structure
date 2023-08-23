@@ -71,3 +71,25 @@ class Node:
 class BinartSearchTree:
     def __init__(self):
         self.root = None
+
+    def create(self, val):
+        if self.root == None:
+            self.root = Node(val)
+        else:
+            curr = self.root
+
+            while True:
+                if val < curr.info:
+                    if curr.left:
+                        curr = curr.left
+                    else:
+                        curr.left = Node(val)
+                        break
+                elif val > curr.info:
+                    if curr.right:
+                        curr = curr.right
+                    else:
+                        curr.right = Node(val)
+                        break
+                else:
+                    break
