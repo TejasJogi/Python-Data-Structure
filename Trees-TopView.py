@@ -94,6 +94,22 @@ class BinarySearchTree:
                 else:
                     break
 
+def topview(root):
+    #Write your code here
+    hm={}
+    queue=[]
+    queue.append((root,0))
+    while(queue):
+        q=queue.pop(0)
+        if q[1] not in hm:
+            hm[q[1]]=q[0].info
+        if q[0].left:
+            queue.append((q[0].left,q[1]-1))
+        if q[0].right:
+            queue.append((q[0].right,q[1]+1))
+    for k, v in sorted(hm.items()):
+        print(str(v)+' ', end='')
+
 tree = BinarySearchTree()
 t = int(input())
 
