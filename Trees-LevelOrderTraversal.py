@@ -80,3 +80,21 @@ class BinarySearchTree:
                         break
                 else:
                     break
+
+def levelOrder(root):
+    #Write your code here
+    if root == None:
+        return
+    
+    que = []
+    que.append(root)
+
+    while que:
+        val = que.popleft()
+        print(val.info, end = ' ')
+
+        if val.left:
+            que.append(val.left)
+        
+        if val.right:
+            que.append(val.right)
