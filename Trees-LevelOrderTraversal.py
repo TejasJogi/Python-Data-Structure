@@ -45,3 +45,12 @@
 # We need to print the nodes level by level. We process each level from left to right.
 # Level Order Traversal: 1 -> 2 -> 5 -> 3 -> 6 -> 4.
 
+class Node:
+    def __init__(self, info):
+        self.info = info
+        self.left = None
+        self.right = None
+        self.level = None
+
+    def __str__(self):
+        return str(self.info)
