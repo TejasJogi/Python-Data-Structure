@@ -98,3 +98,14 @@ def levelOrder(root):
         
         if val.right:
             que.append(val.right)
+
+
+tree = BinarySearchTree()
+t = int(input())
+
+arr = list(map(int, input().split()))
+
+for i in range(t):
+    tree.create(arr[i])
+
+levelOrder(tree.root)
