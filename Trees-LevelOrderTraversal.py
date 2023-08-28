@@ -81,12 +81,14 @@ class BinarySearchTree:
                 else:
                     break
 
+from collections import deque
+
 def levelOrder(root):
     #Write your code here
     if root == None:
         return
     
-    que = []
+    que = deque()
     que.append(root)
 
     while que:
