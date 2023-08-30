@@ -72,3 +72,15 @@ def preOrder(root):
     print(root.info, end = ' ')
     preOrder(root.left)
     preOrder(root.right)
+
+
+
+tree = BinarySearchTree()
+t = int(input())
+
+arr = list(map(int, input().split()))
+
+for i in range(t):
+    tree.insert(arr[i])
+
+preOrder(tree.root)
