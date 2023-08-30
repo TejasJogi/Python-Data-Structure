@@ -44,25 +44,26 @@ class BinarySearchTree:
     def __init__(self):
         self.root = None
 
-    def create(self, val):
+    def insert(self, val):
+        #Enter you code here.
         if self.root == None:
             self.root = Node(val)
         else:
-            curr = curr.root
+            curr = self.root
 
             while True:
                 if val < curr.info:
                     if curr.left:
                         curr = curr.left
-                        break
                     else:
                         curr.left = Node(val)
+                        break
                 elif val > curr.info:
                     if curr.right:
                         curr = curr.right
-                        break
                     else:
                         curr.right = Node(val)
+                        break
                 else:
                     break
 
@@ -72,8 +73,6 @@ def preOrder(root):
     print(root.info, end = ' ')
     preOrder(root.left)
     preOrder(root.right)
-
-
 
 tree = BinarySearchTree()
 t = int(input())
