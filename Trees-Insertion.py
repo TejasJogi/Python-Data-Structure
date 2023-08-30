@@ -39,3 +39,29 @@ class Node:
 
     def __str__(self):
         return str(self.info)
+    
+class BinarySearchTree:
+    def __init__(self):
+        self.root = None
+
+    def create(self, val):
+        if self.root == None:
+            self.root = Node(val)
+        else:
+            curr = curr.root
+
+            while True:
+                if val < curr.info:
+                    if curr.left:
+                        curr = curr.left
+                        break
+                    else:
+                        curr.left = Node(val)
+                elif val > curr.info:
+                    if curr.right:
+                        curr = curr.right
+                        break
+                    else:
+                        curr.right = Node(val)
+                else:
+                    break
