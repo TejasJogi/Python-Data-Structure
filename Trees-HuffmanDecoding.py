@@ -88,3 +88,12 @@ def huffman_hidden():#builds the tree and returns root
     root = q.get()
     root = root[2]#contains root object
     return root
+
+def dfs_hidden(obj, already):
+    if(obj == None):
+        return
+    elif(obj.data != '\0'):
+        code_hidden[obj.data] = already
+        
+    dfs_hidden(obj.right, already + "1")
+    dfs_hidden(obj.left, already + "0")
