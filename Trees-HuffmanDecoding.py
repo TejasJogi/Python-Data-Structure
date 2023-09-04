@@ -83,7 +83,7 @@ def huffman_hidden():#builds the tree and returns root
         obj = Node(a[0] + b[0], '\0' )
         obj.left = a[2]
         obj.right = b[2]
-        q.put((obj.freq, obj.data, obj ))
+        q.put((obj.freq, obj.info, obj ))
         
     root = q.get()
     root = root[2]#contains root object
@@ -92,11 +92,29 @@ def huffman_hidden():#builds the tree and returns root
 def dfs_hidden(obj, already):
     if(obj == None):
         return
-    elif(obj.data != '\0'):
-        code_hidden[obj.data] = already
+    elif(obj.info != '\0'):
+        code_hidden[obj.info] = already
         
     dfs_hidden(obj.right, already + "1")
     dfs_hidden(obj.left, already + "0")
+
+
+def decodeHuff(root, s):
+	#Enter Your Code Here
+    curr = root
+    msg = []
+
+    for i in s:
+        if i == '0' and curr.left:
+            curr = curr.left
+        elif curr.right:
+            curr = curr.right
+
+        if curr.left is None and curr.right is None:
+            msg.append(curr.info)
+            curr = root
+    
+    print("".join(msg))
 
 
 ip = input()
