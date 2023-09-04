@@ -49,3 +49,19 @@
 
 # ABACA
 
+class Node:
+    def __init__(self,info, freq):
+        self.info = info
+        self.freq = freq
+        self.left = None
+        self.right = None
+        self.level = None
+
+        global cntr
+        self._count = cntr
+        cntr = cntr + 1
+        
+    def __lt__(self, other):
+        if self.freq != other.freq:
+            return self.freq < other.freq
+        return self._count < other._count
