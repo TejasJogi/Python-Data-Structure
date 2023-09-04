@@ -49,6 +49,10 @@
 
 # ABACA
 
+import queue as Queue
+
+cntr = 0
+
 class Node:
     def __init__(self,info, freq):
         self.info = info
@@ -65,3 +69,22 @@ class Node:
         if self.freq != other.freq:
             return self.freq < other.freq
         return self._count < other._count
+    
+def huffman_hidden():#builds the tree and returns root
+    q = Queue.PriorityQueue()
+
+    
+    for key in freq:
+        q.put((freq[key], key, Node(freq[key], key) ))
+    
+    while q.qsize() != 1:
+        a = q.get()
+        b = q.get()
+        obj = Node(a[0] + b[0], '\0' )
+        obj.left = a[2]
+        obj.right = b[2]
+        q.put((obj.freq, obj.data, obj ))
+        
+    root = q.get()
+    root = root[2]#contains root object
+    return root
