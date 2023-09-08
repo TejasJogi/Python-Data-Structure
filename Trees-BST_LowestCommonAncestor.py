@@ -72,3 +72,18 @@ class BinarySearchTree:
                         break
                 else:
                     break
+def lca(root, v1, v2):
+    pass
+
+tree = BinarySearchTree()
+t = int(input())
+
+arr = list(map(int, input().split()))
+
+for i in range(t):
+    tree.create(arr[i])
+
+v = list(map(int, input().split()))
+
+ans = lca(tree.root, v[0], v[1])
+print (ans.info)
