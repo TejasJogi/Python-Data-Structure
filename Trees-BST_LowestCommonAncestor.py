@@ -72,6 +72,7 @@ class BinarySearchTree:
                         break
                 else:
                     break
+                
 def lca(root, v1, v2):
     pass
 
