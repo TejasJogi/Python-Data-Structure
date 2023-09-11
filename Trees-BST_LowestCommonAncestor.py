@@ -72,9 +72,20 @@ class BinarySearchTree:
                         break
                 else:
                     break
-                
+
 def lca(root, v1, v2):
-    pass
+    if v1 > v2:
+        v1, v2 = v2, v1
+
+        curr = root
+
+    while True:
+        if v1 < curr.info or v2 < curr.info:
+            curr = curr.left
+        elif v1 > curr.info or v2 > curr.info:
+            curr = curr.right
+        else:
+            return curr
 
 tree = BinarySearchTree()
 t = int(input())
