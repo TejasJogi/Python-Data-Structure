@@ -58,15 +58,15 @@ class BinarySearchTree:
             curr = self.root
 
             while True:
-                if val < self.info:
+                if val < curr.info:
                     if curr.left:
                         curr = curr.left
                     else:
                         curr = Node(val)
                         break
-                elif val > self.right:
+                elif val > curr.info:
                     if curr.right:
-                        curr = curr.ight
+                        curr = curr.right
                     else:
                         curr = Node(val)
                         break
@@ -76,13 +76,13 @@ class BinarySearchTree:
 def lca(root, v1, v2):
     if v1 > v2:
         v1, v2 = v2, v1
-
-        curr = root
+    
+    curr = root
 
     while True:
-        if v1 < curr.info or v2 < curr.info:
+        if v1 <  v2 < curr.info:
             curr = curr.left
-        elif v1 > curr.info or v2 > curr.info:
+        elif v1 >  v2 > curr.info:
             curr = curr.right
         else:
             return curr
