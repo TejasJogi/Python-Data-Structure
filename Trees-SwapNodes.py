@@ -148,6 +148,8 @@
 #   \        /   \          /           /   \              \       /   \  
 #    9      10   11        9           11   10              9     10   11 
 
+from collections import deque
+
 class Node:
     def __init__(self, info):
         self.info = info
@@ -158,27 +160,63 @@ class Node:
     def __str__(self):
         return str(self.info)
     
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+def swapNodes(indexes, queries):
 
-    n = int(input().strip())
+    def create(root, indexes):
 
-    indexes = []
+        q = deque([root])
 
-    for _ in range(n):
-        indexes.append(list(map(int, input().rstrip().split())))
+        for x, y in indexes:
+            temp = q.popleft()
 
-    queries_count = int(input().strip())
+            if x != -1:
+                temp.left = Node(x)
+                q.append(temp.left)
 
-    queries = []
+            if y != -1:
+                temp.right = Node(y)
+                q.append(temp.right)
 
-    for _ in range(queries_count):
-        queries_item = int(input().strip())
-        queries.append(queries_item)
+        return root
+    
+    def swap(root, k, level, lst):
+        if root:
+            if level % k == 0:
+                root.left, root.right = root.right, root.left
+            
+            swap(root.left, k, level+1, lst)
+            lst.append(root.info)
+            swap(root.right, k, level+1, lst)
 
-    result = swapNodes(indexes, queries)
+    root = Node(1)
 
-    fptr.write('\n'.join([' '.join(map(str, x)) for x in result]))
-    fptr.write('\n')
+    root = create(root, indexes)
 
-    fptr.close()
+    result = []
+
+    for k in queries:
+        lst = []
+        swap(root, k, 1, lst)
+        result.append(lst)
+
+    return result
+
+
+n = int(input().strip())
+
+indexes = []
+
+for _ in range(n):
+    indexes.append(list(map(int, input().rstrip().split())))
+
+queries_count = int(input().strip())
+
+queries = []
+
+for _ in range(queries_count):
+    queries_item = int(input().strip())
+    queries.append(queries_item)
+
+result = swapNodes(indexes, queries)
+
+print('\n'.join([' '.join(map(str, x)) for x in result]))
