@@ -22,3 +22,24 @@
 
 # No
 
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+def check_binary_search_tree_(root):
+
+    def check(root, min_val, max_val):
+
+        if root == None:
+            return True
+        
+        val = root.data
+
+        if min_val < val < max_val:
+            return check(root.left, min_val, val) and check(root.right, val, max_val)
+        else:
+            return False
+
+    return check(root, 0, 10000)
