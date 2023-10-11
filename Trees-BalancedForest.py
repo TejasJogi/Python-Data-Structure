@@ -46,3 +46,29 @@
 # 2
 # -1
 
+import math
+import os
+import random
+import re
+import sys
+
+def balancedForest(c, edges):
+    pass
+
+if __name__ == '__main__':
+    q = int(input().strip())
+
+    for q_itr in range(q):
+        n = int(input().strip())
+
+        c = list(map(int, input().rstrip().split()))
+
+        edges = []
+
+        for _ in range(n - 1):
+            edges.append(list(map(int, input().rstrip().split())))
+
+        result = balancedForest(c, edges)
+
+    for i in result:
+        print(i)
