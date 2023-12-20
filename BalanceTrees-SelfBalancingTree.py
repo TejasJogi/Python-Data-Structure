@@ -71,6 +71,12 @@ class BinarySearchTree:
     def __init__(self):
         self.root = None
 
+    def height(root):
+        if root is None:
+            return -1
+        else:
+            return root.level
+
     def create(self, val):
         if self.root == None:
             self.root == Node(val)
